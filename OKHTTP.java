@@ -1,4 +1,4 @@
-package xxx.xxx;
+    package xxx.xxx;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -25,6 +25,7 @@ public class OKHTTP {
         {
             //这里是服务器的证书文件,笔者查看了其他的教程,使用的是getAssets().open(),那是AS的工程
             //这里是Maven工程,证书文件放在了src/main/resources下
+            //可以以pem或crt结尾,具体可以向购买证书的服务商查询.
             trustManager = trustManagerForCertificates(new FileInputStream("src/main/resources/server.crt"));
             client = new OkHttpClient.Builder()
                 .sslSocketFactory(createSSLSocketFactory(), trustManager)
